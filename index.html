@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LUX Hotel | Arabian Luxury</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <header>
+    <nav class="navbar">
+      <h1 class="logo">LUX HOTEL</h1>
+
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#rooms">Rooms & Suites</a></li>
+        <li><a href="#booking">Booking</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#events">Events</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="overlay"></div>
+
+    <div class="hero-content">
+      <h2>Experience Arabian Luxury</h2>
+      <p>
+        Where elegance meets world-class hospitality.
+        Discover Dubai-inspired luxury with unforgettable experiences.
+      </p>
+
+      <a href="#booking" class="hero-btn">Reserve Your Stay</a>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="about-text">
+      <h2>Welcome To LUX Hotel</h2>
+
+      <p>
+        LUX Hotel blends Arabian elegance with modern sophistication.
+        From presidential suites to rooftop helipad access, every experience
+        is crafted for luxury, comfort and exclusivity.
+      </p>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <h3>Luxury Spa</h3>
+        </div>
+
+        <div class="feature-card">
+          <h3>Infinity Pool Bar</h3>
+        </div>
+
+        <div class="feature-card">
+          <h3>Private Helipad</h3>
+        </div>
+
+        <div class="feature-card">
+          <h3>World Class Casino</h3>
+        </div>
+      </div>
+    </div>
+
+    <div class="about-image">
+      <img src="images/lobby.jpg" alt="">
+    </div>
+  </section>
+
+  <!-- ROOMS -->
+  <section class="rooms" id="rooms">
+
+    <div class="section-title">
+      <h2>Luxury Rooms & Suites</h2>
+      <p>Crafted for royalty and comfort</p>
+    </div>
+
+    <div class="room-container">
+
+      <div class="room-card">
+        <img src="images/presidential.jpg" alt="">
+
+        <div class="room-info">
+          <h3>Presidential Suite</h3>
+          <p>
+            Experience unmatched elegance with panoramic skyline views,
+            marble interiors and premium luxury comfort.
+          </p>
+
+          <span>$3,500 / night</span>
+        </div>
+      </div>
+
+      <div class="room-card">
+        <img src="images/penthouse.jpg" alt="">
+
+        <div class="room-info">
+          <h3>Penthouse Suite</h3>
+          <p>
+            Sophisticated architecture with breathtaking city views
+            and modern Arabian-inspired interiors.
+          </p>
+
+          <span>$5,000 / night</span>
+        </div>
+      </div>
+
+      <div class="room-card">
+        <img src="images/suite.jpg" alt="">
+
+        <div class="room-info">
+          <h3>Luxury Suite</h3>
+          <p>
+            Elegant comfort designed for unforgettable luxury stays.
+          </p>
+
+          <span>$1,800 / night</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services">
+
+    <div class="section-title">
+      <h2>Exclusive Experiences</h2>
+    </div>
+
+    <div class="service-grid">
+
+      <div class="service-card">
+        <img src="images/spa.jpg" alt="">
+        <h3>Luxury Spa</h3>
+      </div>
+
+      <div class="service-card">
+        <img src="images/restaurant.jpg" alt="">
+        <h3>Fine Dining</h3>
+      </div>
+
+      <div class="service-card">
+        <img src="images/casino.jpg" alt="">
+        <h3>Casino Royale</h3>
+      </div>
+
+      <div class="service-card">
+        <img src="images/poolbar.jpg" alt="">
+        <h3>Pool Bar</h3>
+      </div>
+
+      <div class="service-card">
+        <img src="images/helipad.jpg" alt="">
+        <h3>Private Helipad</h3>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- EVENTS -->
+  <section class="events" id="events">
+
+    <div class="event-overlay"></div>
+
+    <div class="events-content">
+      <h2>Luxury Events & Celebrations</h2>
+
+      <p>
+        Host unforgettable weddings, business summits and elite gatherings
+        inside our world-class ballroom experience.
+      </p>
+    </div>
+  </section>
+
+  <!-- BOOKING -->
+  <section class="booking" id="booking">
+
+    <div class="section-title">
+      <h2>Book Your Stay</h2>
+    </div>
+
+    <form class="booking-form">
+
+      <input type="text" placeholder="Full Name" required>
+
+      <input type="email" placeholder="Email Address" required>
+
+      <input type="date" required>
+
+      <input type="date" required>
+
+      <select required>
+        <option value="">Select Room</option>
+        <option>Presidential Suite</option>
+        <option>Penthouse Suite</option>
+        <option>Luxury Suite</option>
+      </select>
+
+      <select>
+        <option>USD ($)</option>
+        <option>EUR (€)</option>
+        <option>KES (Ksh)</option>
+        <option>AED (د.إ)</option>
+      </select>
+
+      <button type="submit">Confirm Booking</button>
+
+    </form>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+
+    <div class="contact-box">
+      <h2>Contact Us</h2>
+
+      <p>Email: reservations@luxhotel.com</p>
+      <p>Phone: +971 555 888 777</p>
+      <p>Dubai Marina, United Arab Emirates</p>
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 LUX Hotel. Arabian Luxury Redefined.</p>
+  </footer>
+
+</body>
+</html>
