@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>LUX | Beachfront Luxury Hotel</title>
-  <!-- Google Fonts: Serif for elegance, Sans for modernity -->
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <!-- Font Awesome 6 (free) -->
+  <!-- Font Awesome 6 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     * {
@@ -33,7 +33,7 @@
       padding: 0 40px;
     }
 
-    /* Header / Navigation */
+    /* Header */
     header {
       position: fixed;
       top: 0;
@@ -88,7 +88,6 @@
       color: #F7F2E7;
       letter-spacing: 1px;
       transition: 0.2s;
-      position: relative;
     }
 
     header.scrolled .nav-links a {
@@ -99,17 +98,27 @@
       opacity: 0.8;
     }
 
-    /* Hero Section */
+    /* Hero with reliable gradient fallback */
     .hero {
       height: 100vh;
       min-height: 700px;
-      background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.35)), url('https://images.pexels.com/photos/753626/pexels-photo-753626.jpeg?auto=compress&cs=tinysrgb&w=1600') center/cover no-repeat;
+      background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.4)), 
+                  url('https://placehold.co/1920x1080/1a4d8c/white?text=LUX+Beach+Resort');
+      background-size: cover;
+      background-position: center;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
       color: white;
       position: relative;
+    }
+
+    /* Fallback solid color while images load */
+    .room-img, .gallery-item {
+      background-color: #D9B48B;
+      background-size: cover;
+      background-position: center;
     }
 
     .hero-content {
@@ -154,7 +163,6 @@
       box-shadow: 0 8px 20px rgba(0,0,0,0.15);
     }
 
-    /* Section styling */
     section {
       padding: 100px 0;
     }
@@ -176,7 +184,6 @@
       font-size: 1.1rem;
     }
 
-    /* Rooms / Suites cards */
     .rooms-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -200,8 +207,6 @@
     .room-img {
       height: 280px;
       width: 100%;
-      background-size: cover;
-      background-position: center;
     }
 
     .room-info {
@@ -227,7 +232,6 @@
       font-family: 'Inter', sans-serif;
     }
 
-    /* Amenities grid */
     .amenities-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -248,12 +252,6 @@
       margin-bottom: 8px;
     }
 
-    .amenity-item p {
-      color: #5E5A57;
-      font-size: 0.95rem;
-    }
-
-    /* Gallery */
     .gallery-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -265,8 +263,6 @@
       border-radius: 24px;
       overflow: hidden;
       height: 260px;
-      background-size: cover;
-      background-position: center;
       transition: 0.3s;
       cursor: pointer;
     }
@@ -276,7 +272,6 @@
       box-shadow: 0 15px 25px rgba(0,0,0,0.15);
     }
 
-    /* Testimonials */
     .testimonial-grid {
       display: flex;
       gap: 30px;
@@ -307,7 +302,6 @@
       color: #B97F44;
     }
 
-    /* Footer / Contact */
     footer {
       background: #1E1C1A;
       color: #CFC9C2;
@@ -357,7 +351,6 @@
       font-size: 0.85rem;
     }
 
-    /* Animations */
     @keyframes fadeUp {
       0% {
         opacity: 0;
@@ -369,7 +362,6 @@
       }
     }
 
-    /* Responsive */
     @media (max-width: 992px) {
       .gallery-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -410,7 +402,6 @@
       }
     }
 
-    /* Smooth backdrop */
     .book-btn {
       background: #2C2A29;
       color: #F7F2E7;
@@ -442,7 +433,6 @@
 </header>
 
 <main>
-  <!-- Hero -->
   <section class="hero" id="home">
     <div class="hero-content">
       <h1>LUX BEACH HOTEL</h1>
@@ -451,14 +441,13 @@
     </div>
   </section>
 
-  <!-- Rooms / Suites -->
   <section id="rooms">
     <div class="container">
       <h2 class="section-title">Oceanfront Sanctuaries</h2>
       <div class="section-sub">Indulge in handcrafted elegance, each suite offers panoramic sea views and bespoke comfort.</div>
       <div class="rooms-grid">
         <div class="room-card">
-          <div class="room-img" style="background-image: url('https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg?auto=compress&cs=tinysrgb&w=1200');"></div>
+          <div class="room-img" style="background-image: url('https://placehold.co/800x600/e8d5c4/2C2A29?text=Infinity+Pool+Suite');"></div>
           <div class="room-info">
             <h3>Infinity Pool Suite</h3>
             <div class="room-desc">Private plunge pool, king bed, rain shower, and direct beach terrace.</div>
@@ -466,7 +455,7 @@
           </div>
         </div>
         <div class="room-card">
-          <div class="room-img" style="background-image: url('https://images.pexels.com/photos/261169/pexels-photo-261169.jpeg?auto=compress&cs=tinysrgb&w=1200');"></div>
+          <div class="room-img" style="background-image: url('https://placehold.co/800x600/d4c5b5/2C2A29?text=Penthouse+Horizon');"></div>
           <div class="room-info">
             <h3>Penthouse Horizon</h3>
             <div class="room-desc">Top-floor panorama, ocean-view jacuzzi, personal butler service.</div>
@@ -474,7 +463,7 @@
           </div>
         </div>
         <div class="room-card">
-          <div class="room-img" style="background-image: url('https://images.pexels.com/photos/271618/pexels-photo-271618.jpeg?auto=compress&cs=tinysrgb&w=1200');"></div>
+          <div class="room-img" style="background-image: url('https://placehold.co/800x600/c2b09a/2C2A29?text=Beachfront+Villa');"></div>
           <div class="room-info">
             <h3>Beachfront Villa</h3>
             <div class="room-desc">Step onto white sand, outdoor shower, and dedicated cabana.</div>
@@ -485,7 +474,6 @@
     </div>
   </section>
 
-  <!-- Amenities -->
   <section id="amenities" style="background-color: #F9F6EF;">
     <div class="container">
       <h2 class="section-title">Unrivaled Experiences</h2>
@@ -501,43 +489,40 @@
     </div>
   </section>
 
-  <!-- Gallery -->
   <section id="gallery">
     <div class="container">
       <h2 class="section-title">Visual Serenity</h2>
       <div class="section-sub">Moments captured at LUX — where golden light meets turquoise tides.</div>
       <div class="gallery-grid">
-        <div class="gallery-item" style="background-image: url('https://images.pexels.com/photos/338504/pexels-photo-338504.jpeg?auto=compress&cs=tinysrgb&w=1200');"></div>
-        <div class="gallery-item" style="background-image: url('https://images.pexels.com/photos/457882/pexels-photo-457882.jpeg?auto=compress&cs=tinysrgb&w=1200');"></div>
-        <div class="gallery-item" style="background-image: url('https://images.pexels.com/photos/1458453/pexels-photo-1458453.jpeg?auto=compress&cs=tinysrgb&w=1200');"></div>
-        <div class="gallery-item" style="background-image: url('https://images.pexels.com/photos/1287460/pexels-photo-1287460.jpeg?auto=compress&cs=tinysrgb&w=1200');"></div>
+        <div class="gallery-item" style="background-image: url('https://placehold.co/600x400/a89076/white?text=Sunset+Terrace');"></div>
+        <div class="gallery-item" style="background-image: url('https://placehold.co/600x400/b89a7a/white?text=Infinity+View');"></div>
+        <div class="gallery-item" style="background-image: url('https://placehold.co/600x400/c4aa8a/white?text=Beach+Cabanas');"></div>
+        <div class="gallery-item" style="background-image: url('https://placehold.co/600x400/d5bfa3/white?text=Ocean+Spa');"></div>
       </div>
     </div>
   </section>
 
-  <!-- Testimonials -->
   <section id="testimonials" style="background-color: #FEFCF5;">
     <div class="container">
       <h2 class="section-title">Whispers of Wonder</h2>
       <div class="section-sub">What our guests treasure most about LUX.</div>
       <div class="testimonial-grid">
         <div class="testimonial-card">
-          <div class="testimonial-text">“Absolute perfection. Waking up to the sound of waves and impeccable service. The private dinner on the sand was unforgettable.”</div>
+          <div class="testimonial-text">"Absolute perfection. Waking up to the sound of waves and impeccable service. The private dinner on the sand was unforgettable."</div>
           <div class="testimonial-author">— Olivia Chen, Travel + Leisure</div>
         </div>
         <div class="testimonial-card">
-          <div class="testimonial-text">“LUX redefines beachfront elegance. Every detail, from the eucalyptus-scented linens to the sunset cocktails, is pure magic.”</div>
+          <div class="testimonial-text">"LUX redefines beachfront elegance. Every detail, from the eucalyptus-scented linens to the sunset cocktails, is pure magic."</div>
           <div class="testimonial-author">— Marcus & Sofia</div>
         </div>
         <div class="testimonial-card">
-          <div class="testimonial-text">“The infinity pool suite is breathtaking. We felt like royalty. Already booking for next season.”</div>
+          <div class="testimonial-text">"The infinity pool suite is breathtaking. We felt like royalty. Already booking for next season."</div>
           <div class="testimonial-author">— Jonathan Hayes</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Contact & Booking -->
   <section id="contact">
     <div class="container">
       <h2 class="section-title">Begin Your Journey</h2>
@@ -601,7 +586,6 @@
 </footer>
 
 <script>
-  // Sticky header with class toggle on scroll
   const header = document.getElementById('header');
   window.addEventListener('scroll', () => {
     if (window.scrollY > 40) {
@@ -611,7 +595,6 @@
     }
   });
 
-  // Smooth scroll for nav links and internal buttons
   document.querySelectorAll('.nav-links a, .btn[href^="#"], .footer-col a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
       const targetId = this.getAttribute('href');
@@ -622,16 +605,12 @@
           const offset = 90;
           const elementPosition = targetElement.getBoundingClientRect().top;
           const offsetPosition = elementPosition + window.pageYOffset - offset;
-          window.scrollTo({
-            top: offsetPosition,
-            behavior: 'smooth'
-          });
+          window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
         }
       }
     });
   });
 
-  // Simple form interaction (demo)
   const bookingForm = document.getElementById('bookingForm');
   const feedback = document.getElementById('formFeedback');
 
@@ -648,28 +627,14 @@
         feedback.style.color = '#B97F44';
         bookingForm.reset();
       }
-      setTimeout(() => {
-        if(feedback.innerText) setTimeout(() => feedback.innerText = '', 4000);
-      }, 3000);
+      setTimeout(() => { if(feedback.innerText) setTimeout(() => feedback.innerText = '', 4000); }, 3000);
     });
   }
 
-  // subtle parallax vibe for hero text? not necessary, but adds polish
-  window.addEventListener('load', () => {
-    document.body.style.visibility = 'visible';
-    // preload effect
-  });
-  document.body.style.visibility = 'visible';
-  
-  // gallery click light effect (optional)
   const galleryItems = document.querySelectorAll('.gallery-item');
   galleryItems.forEach(item => {
     item.addEventListener('click', () => {
-      const bgImg = getComputedStyle(item).backgroundImage;
-      if(bgImg && bgImg !== 'none') {
-        // just a playful alert to simulate "view full size" (luxury touch)
-        alert('✨ Immerse in LUX — full gallery available upon request.');
-      }
+      alert('✨ Immerse in LUX — full gallery available upon request.');
     });
   });
 </script>
