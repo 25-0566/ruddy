@@ -1,37 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LUX Hotel | Arabian Luxury</title>
 
-<!-- SERVICES -->
-<section class="services">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <style>
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        scroll-behavior:smooth;
+    }
 
-  <div class="section-title">
-    <h2>Exclusive Experiences</h2>
-  </div>
+    body{
+        background:#0b0b0b;
+        color:white;
+        font-family:'Poppins', sans-serif;
+    }
 
-  <div class="service-grid">
+    /* NAVBAR */
+    .navbar{
+        width:100%;
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        padding:25px 8%;
+        position:fixed;
+        z-index:1000;
+        background:rgba(0,0,0,0.5);
+        backdrop-filter:blur(10px);
+    }
 
-    <div class="service-card">
-      <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=600" alt="Luxury Spa">
-      <h3>Luxury Spa</h3>
+    .logo{
+        font-family:'Cinzel', serif;
+        color:#d4af37;
+        font-size:32px;
+    }
+
+    .nav-links{
+        display:flex;
+        list-style:none;
+        gap:30px;
+    }
+
+    .nav-links a{
+        text-decoration:none;
+        color:white;
+        transition:0.3s;
+    }
+
+    .nav-links a:hover{
+        color:#d4af37;
+    }
+
+    /* HERO */
+    .hero{
+        height:100vh;
+        background:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=1600');
+        background-size:cover;
+        background-position:center;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        text-align:center;
+    }
+
+    .hero-content{
+        max-width:800px;
+        padding:20px;
+    }
+
+    .hero-content h2{
+        font-size:70px;
+        font-family:'Cinzel', serif;
+        color:#d4af37;
+        margin-bottom:20px;
+    }
+
+    .hero-content p{
+        font-size:18px;
+        line-height:1.8;
+        margin-bottom:30px;
+    }
+
+    .hero-btn{
+        padding:15px 35px;
+        background:#d4af37;
+        color:black;
+        text-decoration:none;
+        border-radius:40px;
+        font-weight:bold;
+        transition:0.3s;
+        display:inline-block;
+    }
+
+    .hero-btn:hover{
+        background:white;
+    }
+
+    /* ABOUT */
+    .about{
+        display:flex;
+        gap:50px;
+        padding:100px 8%;
+        align-items:center;
+        flex-wrap:wrap;
+    }
+
+    .about-text{
+        flex:1;
+    }
+
+    .about-text h2{
+        font-size:45px;
+        margin-bottom:20px;
+        color:#d4af37;
+        font-family:'Cinzel', serif;
+    }
+
+    .about-text p{
+        line-height:1.9;
+        margin-bottom:30px;
+    }
+
+    .about-image{
+        flex:1;
+    }
+
+    .about-image img{
+        width:100%;
+        border-radius:20px;
+    }
+
+    .features-grid{
+        display:grid;
+        grid-template-columns:repeat(2,1fr);
+        gap:20px;
+    }
+
+    .feature-card{
+        background:#161616;
+        padding:25px;
+        border:1px solid #d4af37;
+        border-radius:15px;
+        text-align:center;
+    }
+
+    /* SECTIONS */
+    .section-title{
+        text-align:center;
+        margin-bottom:60px;
+    }
+
+    .section-title h2{
+        font-size:45px;
+        color:#d4af37;
+        font-family:'Cinzel', serif;
+    }
+
+    .section-title p{
+        margin-top:10px;
+        color:#ccc;
+    }
+
+    /* ROOMS */
+    .rooms{
+        padding:100px 8%;
+    }
+
+    .room-container{
+        display:grid;
+        grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+        gap:30px;
+    }
+
+    .room-card{
+        background:#141414;
+        border-radius:20px;
+        overflow:hidden;
+        transition:0.4s;
+    }
+
+    .room-card:hover{
+        transform:translateY(-10px);
+    }
+
+    .room-card img{
+        width:100%;
+        height:300px;
+        object-fit:cover;
+    }
+
+    .room-info{
+        padding:25px;
+    }
+
+    .room-info h3{
+        color:#d4af37;
+        margin-bottom:15px;
+    }
+
+    .room-info p{
+        color:#ccc;
+        line-height:1.7;
+        margin-bottom:20px;
+    }
+
+    .room-info span{
+        font-size:20px;
+        font-weight:bold;
+        color:#d4af37;
+    }
+
+    /* SERVICES */
+    .services{
+        padding:100px 8%;
+    }
+
+    .service-grid{
+        display:grid;
+        grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+        gap:25px;
+    }
+
+    .service-card{
+        position:relative;
+        overflow:hidden;
+        border-radius:20px;
+        cursor:pointer;
+    }
+
+    .service-card img{
+        width:100%;
+        height:350px;
+        object-fit:cover;
+        transition:0.5s;
+    }
+
+    .service-card:hover img{
+        transform:scale(1.1);
+    }
+
+    .service-card h3{
+        position:absolute;
+        bottom:20px;
+        left:20px;
+        font-size:25px;
+        color:white;
+        text-shadow:1px 1px 3px black;
+    }
+
+    /* EVENTS */
+    .events{
+        height:70vh;
+        background:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=1600');
+        background-size:cover;
+        background-position:center;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        text-align:center;
+        background-attachment:fixed;
+    }
+
+    .events-content{
+        max-width:700px;
+        padding:20px;
+    }
+
+    .events-content h2{
+        font-size:50px;
+        color:#d4af37;
+        margin-bottom:20px;
+        font-family:'Cinzel', serif;
+    }
+
+    .events-content p{
+        font-size:18px;
+        line-height:1.8;
+    }
+
+    /* BOOKING */
+    .booking{
+        padding:100px 8%;
+    }
+
+    .booking-form{
+        max-width:700px;
+        margin:auto;
+        display:flex;
+        flex-direction:column;
+        gap:20px;
+    }
+
+    .booking-form input,
+    .booking-form select{
+        padding:18px;
+        border:none;
+        border-radius:10px;
+        background:#161616;
+        color:white;
+    }
+
+    .booking-form input::placeholder{
+        color:#888;
+    }
+
+    .booking-form button{
+        padding:18px;
+        border:none;
+        background:#d4af37;
+        color:black;
+        font-weight:bold;
+        border-radius:10px;
+        cursor:pointer;
+        transition:0.3s;
+    }
+
+    .booking-form button:hover{
+        background:white;
+    }
+
+    /* CONTACT */
+    .contact{
+        padding:100px 8%;
+        text-align:center;
+    }
+
+    .contact-box{
+        background:#161616;
+        padding:50px;
+        border-radius:20px;
+    }
+
+    .contact-box h2{
+        color:#d4af37;
+        margin-bottom:20px;
+        font-size:40px;
+    }
+
+    .contact-box p{
+        margin:10px 0;
+        color:#ccc;
+    }
+
+    /* FOOTER */
+    footer{
+        text-align:center;
+        padding:30px;
+        border-top:1px solid #333;
+        color:#999;
+    }
+
+    /* RESPONSIVE */
+    @media(max-width:900px){
+        .hero-content h2{
+            font-size:45px;
+        }
+
+        .navbar{
+            flex-direction:column;
+            gap:20px;
+        }
+
+        .nav-links{
+            flex-wrap:wrap;
+            justify-content:center;
+        }
+
+        .about{
+            flex-direction:column;
+        }
+        
+        .events-content h2{
+            font-size:35px;
+        }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header>
+    <nav class="navbar">
+      <h1 class="logo">LUX HOTEL</h1>
+
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#rooms">Rooms & Suites</a></li>
+        <li><a href="#booking">Booking</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#events">Events</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h2>Experience Arabian Luxury</h2>
+      <p>
+        Where elegance meets world-class hospitality.
+        Discover Dubai-inspired luxury with unforgettable experiences.
+      </p>
+
+      <a href="#booking" class="hero-btn">Reserve Your Stay</a>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="about-text">
+      <h2>Welcome To LUX Hotel</h2>
+
+      <p>
+        LUX Hotel blends Arabian elegance with modern sophistication.
+        From presidential suites to rooftop helipad access, every experience
+        is crafted for luxury, comfort and exclusivity.
+      </p>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <h3>Luxury Spa</h3>
+        </div>
+
+        <div class="feature-card">
+          <h3>Infinity Pool Bar</h3>
+        </div>
+
+        <div class="feature-card">
+          <h3>Private Helipad</h3>
+        </div>
+
+        <div class="feature-card">
+          <h3>World Class Casino</h3>
+        </div>
+      </div>
     </div>
 
-    <div class="service-card">
-      <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600" alt="Fine Dining">
-      <h3>Fine Dining</h3>
+    <div class="about-image">
+      <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?w=800" alt="Luxury Lobby">
+    </div>
+  </section>
+
+  <!-- ROOMS -->
+  <section class="rooms" id="rooms">
+
+    <div class="section-title">
+      <h2>Luxury Rooms & Suites</h2>
+      <p>Crafted for royalty and comfort</p>
     </div>
 
-    <div class="service-card">
-      <img src="https://images.unsplash.com/photo-1606167928575-2b0648b5ed71?w=600" alt="Casino Royale">
-      <h3>Casino Royale</h3>
+    <div class="room-container">
+
+      <div class="room-card">
+        <img src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=800" alt="Presidential Suite">
+
+        <div class="room-info">
+          <h3>Presidential Suite</h3>
+          <p>
+            Experience unmatched elegance with panoramic skyline views,
+            marble interiors and premium luxury comfort.
+          </p>
+
+          <span>$3,500 / night</span>
+        </div>
+      </div>
+
+      <div class="room-card">
+        <img src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?w=800" alt="Penthouse Suite">
+
+        <div class="room-info">
+          <h3>Penthouse Suite</h3>
+          <p>
+            Sophisticated architecture with breathtaking city views
+            and modern Arabian-inspired interiors.
+          </p>
+
+          <span>$5,000 / night</span>
+        </div>
+      </div>
+
+      <div class="room-card">
+        <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800" alt="Luxury Suite">
+
+        <div class="room-info">
+          <h3>Luxury Suite</h3>
+          <p>
+            Elegant comfort designed for unforgettable luxury stays.
+          </p>
+
+          <span>$1,800 / night</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services">
+
+    <div class="section-title">
+      <h2>Exclusive Experiences</h2>
     </div>
 
-    <div class="service-card">
-      <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600" alt="Pool Bar">
-      <h3>Pool Bar</h3>
+    <div class="service-grid">
+
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=600" alt="Luxury Spa">
+        <h3>Luxury Spa</h3>
+      </div>
+
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600" alt="Fine Dining">
+        <h3>Fine Dining</h3>
+      </div>
+
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1606167928575-2b0648b5ed71?w=600" alt="Casino Royale">
+        <h3>Casino Royale</h3>
+      </div>
+
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600" alt="Pool Bar">
+        <h3>Pool Bar</h3>
+      </div>
+
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1540962351504-03099e0a754b?w=600" alt="Private Helipad">
+        <h3>Private Helipad</h3>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- EVENTS -->
+  <section class="events" id="events">
+
+    <div class="events-content">
+      <h2>Luxury Events & Celebrations</h2>
+
+      <p>
+        Host unforgettable weddings, business summits and elite gatherings
+        inside our world-class ballroom experience.
+      </p>
+    </div>
+  </section>
+
+  <!-- BOOKING -->
+  <section class="booking" id="booking">
+
+    <div class="section-title">
+      <h2>Book Your Stay</h2>
     </div>
 
-    <div class="service-card">
-      <img src="https://images.unsplash.com/photo-1540962351504-03099e0a754b?w=600" alt="Private Helipad">
-      <h3>Private Helipad</h3>
+    <form class="booking-form" onsubmit="event.preventDefault(); alert('Thank you! Our concierge will contact you within 24 hours.');">
+
+      <input type="text" placeholder="Full Name" required>
+
+      <input type="email" placeholder="Email Address" required>
+
+      <input type="date" required>
+
+      <input type="date" required>
+
+      <select required>
+        <option value="">Select Room</option>
+        <option>Presidential Suite</option>
+        <option>Penthouse Suite</option>
+        <option>Luxury Suite</option>
+      </select>
+
+      <select>
+        <option>USD ($)</option>
+        <option>EUR (€)</option>
+        <option>KES (Ksh)</option>
+        <option>AED (د.إ)</option>
+      </select>
+
+      <button type="submit">Confirm Booking</button>
+
+    </form>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+
+    <div class="contact-box">
+      <h2>Contact Us</h2>
+
+      <p>Email: reservations@luxhotel.com</p>
+      <p>Phone: +971 555 888 777</p>
+      <p>Dubai Marina, United Arab Emirates</p>
     </div>
 
-  </div>
-</section>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 LUX Hotel. Arabian Luxury Redefined.</p>
+  </footer>
+
+</body>
+</html>
