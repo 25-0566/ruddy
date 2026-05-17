@@ -3,55 +3,56 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LUX Hotel Diani | Beach Resort</title>
+  <title>LUX Hotel Diani - Beach Resort</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500&display=swap');
+    
+    body { font-family: 'Inter', sans-serif; }
+    .heading { font-family: 'Playfair Display', serif; }
+    
     .hero {
-      background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+      background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), 
                         url('https://picsum.photos/id/1015/1920/1080');
       background-size: cover;
       background-position: center;
     }
     .gold { color: #d4af37; }
-    .card-hover:hover img { transform: scale(1.08); }
   </style>
 </head>
-<body class="bg-black text-white font-sans">
+<body class="bg-black text-white overflow-x-hidden">
 
   <!-- Navbar -->
-  <nav class="bg-black/95 backdrop-blur-md fixed w-full z-50 border-b border-white/10">
+  <nav class="fixed top-0 w-full bg-black/90 backdrop-blur-lg z-50 border-b border-white/10">
     <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
-      <h1 class="text-3xl font-light tracking-widest">
-        LUX <span class="gold">HOTEL</span>
-      </h1>
+      <h1 class="text-4xl font-light tracking-widest heading">LUX <span class="gold">HOTEL</span></h1>
       
-      <div class="hidden md:flex space-x-10 text-sm uppercase tracking-widest">
+      <div class="hidden md:flex items-center space-x-10 text-sm uppercase tracking-widest">
         <a href="#rooms" class="hover:text-gold transition">Rooms & Villas</a>
-        <a href="#amenities" class="hover:text-gold transition">Amenities</a>
+        <a href="#experiences" class="hover:text-gold transition">Experiences</a>
         <a href="#dining" class="hover:text-gold transition">Dining</a>
         <a href="#gallery" class="hover:text-gold transition">Gallery</a>
       </div>
       
-      <button onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})" 
-              class="border border-gold text-gold hover:bg-gold hover:text-black px-8 py-3 rounded-full transition text-sm tracking-widest">
+      <button onclick="document.getElementById('booking').scrollIntoView({behavior: 'smooth'})" 
+              class="bg-gold text-black px-8 py-3.5 rounded-full font-medium hover:bg-amber-300 transition">
         BOOK NOW
       </button>
     </div>
   </nav>
 
   <!-- Hero -->
-  <section class="hero h-screen flex items-center justify-center text-center relative">
-    <div class="max-w-4xl px-6 z-10">
-      <p class="uppercase tracking-[4px] text-gold text-sm mb-4">Diani Beach • Kenya</p>
-      <h1 class="text-6xl md:text-7xl font-light leading-tight mb-6">
-        LUXURY ON THE SHORE
+  <section class="hero h-screen flex items-center justify-center text-center">
+    <div class="max-w-4xl px-6">
+      <p class="uppercase text-gold tracking-[6px] text-sm mb-4">Diani Beach, Kenya</p>
+      <h1 class="text-6xl md:text-7xl heading font-light leading-tight mb-6">
+        Timeless Luxury<br>on the Indian Ocean
       </h1>
-      <p class="text-xl md:text-2xl mb-10">Private beach • Ocean villas • Timeless elegance</p>
-      <button onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})"
-              class="bg-gold text-black px-12 py-5 rounded-full text-lg font-medium hover:scale-105 transition">
-        Reserve Your Stay
+      <p class="text-xl md:text-2xl mb-10 text-gray-200">Private beach • Oceanfront villas • Unforgettable moments</p>
+      <button onclick="document.getElementById('booking').scrollIntoView({behavior: 'smooth'})"
+              class="bg-gold text-black px-14 py-5 rounded-full text-lg font-medium hover:scale-105 transition">
+        RESERVE YOUR STAY
       </button>
     </div>
   </section>
@@ -59,57 +60,51 @@
   <!-- Rooms -->
   <section id="rooms" class="py-24 bg-zinc-950">
     <div class="max-w-7xl mx-auto px-6">
-      <h2 class="text-5xl font-light text-center mb-4">Rooms & Villas</h2>
-      <p class="text-center text-gray-400 mb-12">Choose your perfect ocean escape</p>
+      <h2 class="text-5xl heading font-light text-center mb-4">Rooms & Villas</h2>
+      <p class="text-center text-gray-400 mb-16">Choose your perfect ocean escape</p>
       
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-zinc-900 rounded-3xl overflow-hidden card-hover transition">
-          <img src="https://picsum.photos/id/1015/600/400" class="w-full h-72 object-cover transition">
+      <div class="grid md:grid-cols-3 gap-10">
+        <div class="group bg-zinc-900 rounded-3xl overflow-hidden">
+          <div class="h-80 bg-zinc-800 flex items-center justify-center text-7xl transition group-hover:scale-110">🌊</div>
           <div class="p-8">
-            <h3 class="text-2xl mb-1">Oceanfront Suite</h3>
-            <p class="text-gold text-xl">From KSh 45,000 / night</p>
-            <button class="mt-6 w-full border border-gold py-4 rounded-2xl hover:bg-gold hover:text-black transition">View Room</button>
+            <h3 class="text-2xl mb-2">Oceanfront Suite</h3>
+            <p class="text-gold text-2xl">KSh 45,000 <span class="text-sm text-gray-400">/ night</span></p>
           </div>
         </div>
-
-        <div class="bg-zinc-900 rounded-3xl overflow-hidden card-hover transition">
-          <img src="https://picsum.photos/id/133/600/400" class="w-full h-72 object-cover transition">
+        
+        <div class="group bg-zinc-900 rounded-3xl overflow-hidden">
+          <div class="h-80 bg-zinc-800 flex items-center justify-center text-7xl transition group-hover:scale-110">🏡</div>
           <div class="p-8">
-            <h3 class="text-2xl mb-1">Private Pool Villa</h3>
-            <p class="text-gold text-xl">From KSh 85,000 / night</p>
-            <button class="mt-6 w-full border border-gold py-4 rounded-2xl hover:bg-gold hover:text-black transition">View Villa</button>
+            <h3 class="text-2xl mb-2">Private Pool Villa</h3>
+            <p class="text-gold text-2xl">KSh 85,000 <span class="text-sm text-gray-400">/ night</span></p>
           </div>
         </div>
-
-        <div class="bg-zinc-900 rounded-3xl overflow-hidden card-hover transition">
-          <img src="https://picsum.photos/id/201/600/400" class="w-full h-72 object-cover transition">
+        
+        <div class="group bg-zinc-900 rounded-3xl overflow-hidden">
+          <div class="h-80 bg-zinc-800 flex items-center justify-center text-7xl transition group-hover:scale-110">🏖️</div>
           <div class="p-8">
-            <h3 class="text-2xl mb-1">Deluxe Beach Room</h3>
-            <p class="text-gold text-xl">From KSh 28,000 / night</p>
-            <button class="mt-6 w-full border border-gold py-4 rounded-2xl hover:bg-gold hover:text-black transition">View Room</button>
+            <h3 class="text-2xl mb-2">Deluxe Beach Room</h3>
+            <p class="text-gold text-2xl">KSh 28,000 <span class="text-sm text-gray-400">/ night</span></p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Booking -->
+  <!-- Booking Section -->
   <section id="booking" class="py-24 bg-black">
-    <div class="max-w-4xl mx-auto px-6">
-      <div class="text-center mb-12">
-        <h2 class="text-5xl font-light">Book Your Escape</h2>
-      </div>
-      <div class="bg-zinc-900 p-10 md:p-16 rounded-3xl border border-gold/20">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="text-5xl heading font-light mb-10">Book Your Escape</h2>
+      <div class="bg-zinc-900 p-10 md:p-16 rounded-3xl">
         <form class="grid md:grid-cols-2 gap-6">
-          <input type="date" class="bg-zinc-800 p-5 rounded-2xl focus:outline-none focus:border-gold">
-          <input type="date" class="bg-zinc-800 p-5 rounded-2xl focus:outline-none focus:border-gold">
-          <select class="bg-zinc-800 p-5 rounded-2xl focus:outline-none focus:border-gold">
-            <option>1 Adult</option>
-            <option>2 Adults</option>
-            <option>3+ Guests</option>
+          <input type="date" class="bg-zinc-800 p-6 rounded-2xl text-white">
+          <input type="date" class="bg-zinc-800 p-6 rounded-2xl text-white">
+          <select class="bg-zinc-800 p-6 rounded-2xl text-white">
+            <option>2 Guests</option>
+            <option>4 Guests</option>
+            <option>6 Guests</option>
           </select>
-          <button type="button" 
-                  class="md:col-span-2 bg-gold text-black py-6 rounded-2xl text-lg font-medium hover:bg-amber-300 transition">
+          <button type="button" class="md:col-span-2 bg-gold text-black py-7 rounded-2xl text-xl font-medium hover:bg-amber-300">
             CHECK AVAILABILITY
           </button>
         </form>
@@ -117,10 +112,10 @@
     </div>
   </section>
 
-  <footer class="bg-black py-16 border-t border-white/10 text-center">
-    <h2 class="text-3xl font-light mb-2">LUX Hotel Diani</h2>
-    <p class="text-gray-400">Diani Beach, Kwale County, Kenya</p>
-    <p class="text-sm text-gray-500 mt-10">© 2026 LUX Hotel. All Rights Reserved.</p>
+  <footer class="bg-black py-16 text-center border-t border-white/10">
+    <h2 class="text-3xl heading font-light">LUX Hotel Diani</h2>
+    <p class="text-gray-400 mt-3">Diani Beach • Kwale County • Kenya</p>
+    <p class="text-sm text-gray-500 mt-10">© 2026 All Rights Reserved</p>
   </footer>
 </body>
 </html>
